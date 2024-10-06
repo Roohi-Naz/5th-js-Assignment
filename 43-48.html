@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question 1</h1>
+
+    <a href="#" onClick="alert('Welcome!');">Click here</a>
+    <br>
+    <h1>Question 2</h1>
+
+    <img src="images.jpeg" onClick="alert('Thank you  for puchasig a phome from us');"> <br>
+    <img src="images (1).jpeg" onClick="alert('Thank you  for puchasig a phome from us');">
+    <br>
+    <h1>Question 3</h1>
+
+    <table>
+        <tr>
+        <td>Name</td>
+        <td>Class</td>
+        <td>Roll No</td>
+        <td>Grade</td>
+        </tr>
+
+
+        <tr>
+            <td>John</td>
+            <td>5</td>
+            <td>432</td>
+            <td>A</td>
+            <td><button onClick="del(this)">Delete</button></td>
+
+            </tr>
+
+    <tr>
+        <td>zara</td>
+        <td>6</td>
+        <td>654</td>
+        <td>B</td>
+        <td><button onClick="del(this)">Delete</button></td>
+
+        </tr>
+
+
+        <tr>
+            <td>Emili</td>
+            <td>6</td>
+            <td>453</td>
+            <td>A</td>
+            <td><button onClick="del(this)">Delete</button></td>
+
+            </tr>
+
+
+     <tr>
+        <td>Anna</td>
+         <td>5</td>
+         <td>334</td>
+        <td>B</td>
+        <td><button onClick="del(this)">Delete</button></td>
+
+         </tr>
+
+
+         <tr>
+            <td>Harry</td>
+            <td>7</td>
+            <td>473</td>
+            <td>A</td>
+            <td><button onClick="del(this)">Delete</button></td>
+
+            </tr>
+    
+            <tr>
+                <td>Hamza</td>
+                <td>6</td>
+                <td>432</td>
+                <td>C</td>
+                <td><button onClick="del(this)">Delete</button></td>
+
+                </tr>
+        
+                <tr>
+                    <td>Jiya</td>
+                    <td>8</td>
+                    <td>832</td>
+                    <td>B</td>
+                    <td><button onClick="del(this)">Delete</button></td>
+
+                    </tr>
+            
+ 
+                    <tr>
+                        <td>Ziniya</td>
+                        <td>5</td>
+                        <td>765</td>
+                        <td>C</td>
+                        <td><button onClick="del(this)">Delete</button></td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Ali</td>
+                            <td>8</td>
+                            <td>345</td>
+                            <td>A</td>
+                            <td><button onClick="del(this)">Delete</button></td>
+                            </tr>
+                    
+                            <tr>
+                                <td>Aman</td>
+                                <td>5</td>
+                                <td>126</td>
+                                <td>B</td>
+                                <td><button onClick="del(this)">Delete</button></td>
+
+                                </tr>
+                
+    </table>
+    <h1>Question 4</h1>
+    <img src="before img.jpeg" alt="before image" onmouseover="this.src='after img.jpeg'">
+
+
+    <h1>Question 5</h1>
+
+<div>
+    <h2>Counter: <span id="counter">0</span></h2>
+    <button onClick="increment()">Increase</button>
+    <button onClick="decrement()">Decrease</button>
+</div>
+
+<script>
+    function del(button){
+        var row = button.parentNode.parentNode;
+         
+            row.parentNode.removeChild(row);
+        }
+
+        var count = 0;
+
+function increment() {
+    count++;
+    document.getElementById('counter').innerText = count;
+}
+
+function decrement() {
+    count--;
+    document.getElementById('counter').innerText = count;
+}
+
+</script>
+</body>
+</html>

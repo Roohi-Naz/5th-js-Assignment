@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            display: none;
+        }
+   </style>
+</head>
+<body>
+    <button id="showFormButton">Add Student</button>
+    <div class="form" id="formContainer">
+        <form id="studentForm" onsubmit="submitStudentForm(event)">
+            <label for="name">NAME:</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="class">CLASS:</label>
+            <input type="text" name="class" id="class" required>
+            <br>
+            <label for="grade">GRADE:</label>
+            <input type="text" name="grade" id="grade" required>
+            <br>
+            <label for="rollnumber">ROLL NUMBER:</label>
+            <input type="text" name="rollnumber" id="rollnumber" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <table id="studentTable">
+        <tr>
+            <td>Name</td>
+            <td>Class</td>
+            <td>Roll No</td>
+            <td>Grade</td>
+            <td>Actions</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>5</td>
+            <td>432</td>
+            <td>A</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Anna</td>
+            <td>5</td>
+            <td>334</td>
+            <td>B</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Harry</td>
+            <td>7</td>
+            <td>473</td>
+            <td>A</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Hamza</td>
+            <td>6</td>
+            <td>432</td>
+            <td>C</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Jiya</td>
+            <td>8</td>
+            <td>832</td>
+            <td>B</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Ziniya</td>
+            <td>5</td>
+            <td>765</td>
+            <td>C</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Ali</td>
+            <td>8</td>
+            <td>345</td>
+            <td>A</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Aman</td>
+            <td>5</td>
+            <td>126</td>
+            <td>B</td>
+            <td>
+                <button onclick="del(this)">Delete</button>
+                <button onclick="edit(this)">Edit</button>
+            </td>
+        </tr>
+        
+    </table>
+
+    <script>
+        var currentRow = null;
+
+        function del(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        function edit(button) {
+            currentRow = button.parentNode.parentNode;
+            document.getElementById('name').value = currentRow.cells[0].innerText;
+            document.getElementById('class').value = currentRow.cells[1].innerText;
+            document.getElementById('rollnumber').value = currentRow.cells[2].innerText;
+            document.getElementById('grade').value = currentRow.cells[3].innerText;
+
+            var formContainer = document.getElementById('formContainer');
+            formContainer.style.display = 'block';
+        }
+
+        document.getElementById('showFormButton').addEventListener('click', function() {
+            currentRow = null;
+            document.getElementById('studentForm').reset();
+            var formContainer = document.getElementById('formContainer');
+            formContainer.style.display = 'block';
+        });
+
+        function submitStudentForm(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var className = document.getElementById('class').value;
+            var grade = document.getElementById('grade').value;
+            var rollnumber = document.getElementById('rollnumber').value;
+
+            if (currentRow) {
+                currentRow.cells[0].innerText = name;
+                currentRow.cells[1].innerText = className;
+                currentRow.cells[2].innerText = rollnumber;
+                currentRow.cells[3].innerText = grade;
+            } else {
+                var table = document.getElementById('studentTable');
+                var newRow = table.insertRow();
+
+                newRow.innerHTML = `
+                    <td>${name}</td>
+                    <td>${className}</td>
+                    <td>${rollnumber}</td>
+                    <td>${grade}</td>
+                    <td>
+                        <button onclick="del(this)">Delete</button>
+                        <button onclick="edit(this)">Edit</button>
+                    </td>
+                `;
+            }
+
+            document.getElementById('studentForm').reset();
+            document.getElementById('formContainer').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+    

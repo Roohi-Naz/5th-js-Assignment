@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+#submission {
+    margin-top: 20px;
+    font-size: 16px;
+}
+.q3 {
+font-size: 7cap;
+}
+
+
+    </style>
+</head>
+<body>
+   
+    <div class="form">
+        <form id="goSubmit" onsubmit="submitForm(event)">
+            <label for="name">NAME:</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="email">EMAIL:</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="password">PASSWORD:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <label for="date">DATE OF BIRTH:</label>
+            <input type="date" name="date" id="date" required>
+            <br>
+            <label for="phone">PHONE NUMBER:</label>
+            <input type="number" name="phone" id="phone" required>
+            <br>
+            <label>PAYMENT YOU PREFER:</label>
+            <br>
+            <label for="online">Online payment</label>
+            <input type="radio" name="payment" id="online" value="Online payment" required>
+            <label for="cash">Cash on delivery</label>
+            <input type="radio" name="payment" id="cash" value="Cash on delivery" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <br>
+    <a href="index.html">BACK TO HOME</a>
+    <div id="submission">
+        <h3>Submission:</h3>
+        <p id="name2"></p>
+        <p id="email2"></p>
+        <p id="password2"></p>
+        <p id="date2"></p>
+        <p id="phone2"></p>
+        <p id="payment2"></p>
+    </div>
+
+
+
+
+<h1>Content</h1>
+<p id="paragraph">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non omnis facere nulla corrupti soluta quam et vero impedit culpa inventore,
+    <a href="javascript:void(0)" onclick="expandPara()">Click for more</a>
+</p>
+
+<a href="form.html" class="q3">Question No 3</a>
+
+
+   <script>
+function submitForm(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var date = document.getElementById("date").value;
+    var phone = document.getElementById("phone").value;
+    var payment = document.querySelector('input[name="payment"]:checked').value;
+
+    document.getElementById("name2").innerText = "Name: " + name;
+    document.getElementById("email2").innerText = "Email: " + email;
+    document.getElementById("password2").innerText = "Password: " + password;
+    document.getElementById("date2").innerText = "Date of Birth: " + date;
+    document.getElementById("phone2").innerText = "Phone Number: " + phone;
+    document.getElementById("payment2").innerText = "Payment Preference: " + payment;
+}
+
+
+
+function expandPara(){
+    var fullPara = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non omnis facere nulla corrupti soluta quam et vero impedit culpa inventore, nesciunt perferendis laborum, minus ad blanditiis accusantium qui rerum odio! Est ipsum quo eaque temporibus dicta, quae dolore minus. Facilis, autem velit ullam quis minima dolorem ex cupiditate laborum excepturi iure magni aperiam unde aliquid nemo nisi recusandae illo. Placeat amet accusantium provident necessitatibus harum quae mollitia aperiam laudantium possimus dolor laboriosam, beatae velit! Voluptas possimus, doloribus sequi et laudantium maxime consequuntur, vitae omnis dicta voluptatum molestias, architecto dolor? Facere rem et ipsam dignissimos soluta? Nam, debitis quas quasi dicta deleniti, rem modi, error harum voluptas explicabo corrupti. Necessitatibus voluptas ratione ullam consequatur non? Quos quasi, quo rerum sit tempora maxime illum nam fugiat ea rem atque temporibus quod fugit facere eligendi inventore amet adipisci at quisquam dolores aliquam enim quas iusto praesentium. Ipsum, repellat aperiam natus iste expedita quae veritatis quasi ab provident nesciunt animi aliquid vel rerum fuga quo nulla autem quas ullam velit inventore dicta cumque iusto quisquam. Doloribus fugiat laborum delectus et ut dicta est eaque fuga earum veniam ipsa, quasi laboriosam temporibus harum consequatur voluptates eos. Enim nisi architecto commodi similique minima repellat dignissimos, nulla vitae, temporibus sint quaerat sit modi est perspiciatis eos. Similique reiciendis impedit pariatur alias obcaecati, recusandae, laborum earum aliquid soluta omnis odit deleniti, culpa assumenda ipsam ab perferendis quam? Aliquam corporis quis consequuntur, sit nemo voluptatum veniam, culpa cumque eos fuga consectetur doloremque omnis dicta eveniet accusamus quia autem excepturi? Illo eaque voluptatibus iste temporibus maiores error natus itaque ipsum perferendis quam sint odit, doloremque dicta laudantium accusantium corporis, vero delectus ducimus distinctio. Modi dicta rerum vero placeat architecto quaerat ullam expedita omnis nobis provident eum sunt totam, ipsa quidem numquam quas dolores similique blanditiis laborum. Ipsa esse quae, dolor beatae tempora labore, odio ipsam exercitationem fugit rerum cupiditate neque voluptates possimus libero, nesciunt veritatis corrupti molestias illo sit dicta perferendis? Earum natus, sit aliquid dignissimos minima vitae voluptatum magni non ipsa pariatur ex sint impedit quos nostrum tenetur dolorem laborum omnis aspernatur, reprehenderit voluptatibus quo quibusdam est nobis. Optio repellendus aperiam asperiores velit, recusandae facilis illo nihil iste quae? Exercitationem at asperiores expedita ratione voluptas eum rem earum vero, dolorem, dolor ut perferendis, non eos in atque eligendi numquam maiores voluptate! Eos cumque, laudantium, est molestiae eligendi, aspernatur magni obcaecati ducimus minus aut nemo similique adipisci amet accusantium reprehenderit? Asperiores explicabo incidunt vitae aut eveniet nisi cum fugit? Vitae veniam natus, beatae, autem quis officiis cum iste, recusandae corporis laborum doloribus magnam dolorum magni nostrum voluptatibus sit sapiente. Molestiae laboriosam sunt, nostrum dolor distinctio at praesentium omnis nemo quasi quis ut hic veniam culpa illum. Maxime commodi quasi temporibus distinctio reiciendis illo aliquam id perspiciatis totam voluptatum iste harum quas exercitationem quis tempore voluptatem ratione iure modi, sit eaque molestias vero? Amet sequi doloribus laborum quaerat totam harum excepturi iste repellat rerum nam, eos commodi perferendis corporis suscipit cupiditate! Delectus, eveniet numquam quidem earum ex distinctio ducimus rem incidunt."
+document.getElementById("paragraph").innerHTML = fullPara
+}
+
+
+
+   </script>
+</body>
+</html>
+
+
+
+
